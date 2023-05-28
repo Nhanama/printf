@@ -37,6 +37,7 @@ int print_binary(va_list types, char buffer[],
 {
 	unsigned int a, b, c, sum;
 	unsigned int n[32];
+	int count;
 
 	UNUSED(size);
 	UNUSED(flags);
@@ -48,7 +49,7 @@ int print_binary(va_list types, char buffer[],
 	b = 2147483648; /* (2 ^ 31) */
 	n[0] = a / b;
 
-	for (i = 1; i < 32; i++)
+	for (c = 1; c < 32; c++)
 	{
 		b /= 2;
 		n[c] = (a / b) % 2;
